@@ -16,16 +16,17 @@ public class ProxiBanqueApp {
 
     static Scanner scanner = new Scanner(System.in);
 
+
     public static void main(String[] args) {
 
         //Implementation services
         BankAccountServices bankAccountServices = new BankAccountServicesImplementation();
         ClientServices clientServices = new ClientServicesImplementation();
-
         //Déclaration d'objets Clients
-        Client client = new Client("Albert", "Einstein", "12 rue de Paris", 76500, "06-33-44-22-58");
+
+        Client client = new Client("Albert", "Einstein","Université de Princeton", 148560, "07-55-05-75-85");
         clientServices.createClient(client);
-        Client client1 = new Client("Nicolas", "Tesla", "18 rue des caves", 72500, "03-78-85-52-45");
+        Client client1 = new Client("Bruno", "Giordano", "00:06 et je code toujours", 72500, "05-45-52-78-85");
         clientServices.createClient(client1);
         Client client2 = new Client("Nicolas", "Copernic", "12 rue Charles de Gaulle", 01150, "07-52-12-78-52");
         clientServices.createClient(client2);
@@ -33,7 +34,7 @@ public class ProxiBanqueApp {
         //Déclarations d'objets ComptesBancaires relié au client
        CurrentAccount bankAccount = new CurrentAccount(2500, "04-11-2020", client.getName(), client.getFirstName());
        bankAccountServices.createBankAccount(bankAccount);
-       CurrentAccount bankAccount1 = new CurrentAccount(5000, "11-20-1870", client1.getName(), client.getFirstName());
+       CurrentAccount bankAccount1 = new CurrentAccount(5000, "11-20-1870", client1.getName(), client1.getFirstName());
        bankAccountServices.createBankAccount(bankAccount1);
        CurrentAccount bankAccount2 = new CurrentAccount(0, "20-11-1987", client2.getName(), client2.getFirstName());
        bankAccountServices.createBankAccount(bankAccount2);

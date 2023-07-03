@@ -40,7 +40,6 @@ public class PersitanceMemoryBankAccount implements BankAccountDAO{
         for (BankAccount bankAccount1 : bankAccount){
             bankAccount1.setName(bankAccount1.getName());
             bankAccount1.setFirstName(bankAccount1.getFirstName());
-            bankAccount1.getFirstName();
         }
         return BANKDB.values().stream().toList();
     }
