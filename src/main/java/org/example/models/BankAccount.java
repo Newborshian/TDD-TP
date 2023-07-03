@@ -5,15 +5,20 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BankAccount {
+public class BankAccount extends Client {
     private Integer idBankAccount;
     private Integer pay;
     private String openBankAccount;
+    private String name;
+    private String firstName;
 
 
-    public BankAccount(Integer pay, String openBankAccounts, Client client) {
+    public BankAccount(Integer pay, String openBankAccounts, String name, String firstName) {
+        super(name, firstName);
         this.pay = pay;
         openBankAccount = openBankAccounts;
+        this.name = name;
+        this.firstName = firstName;
     }
 
     @Override
@@ -21,7 +26,9 @@ public class BankAccount {
         return "BankAccount{" +
                 "idBankAccount=" + idBankAccount +
                 ", pay=" + pay +
-                ", OpenBankAccount=" + openBankAccount +
+                ", openBankAccount='" + openBankAccount + '\'' +
+                ", name='" + name + '\'' +
+                ", firstName='" + firstName + '\'' +
                 '}';
     }
 }

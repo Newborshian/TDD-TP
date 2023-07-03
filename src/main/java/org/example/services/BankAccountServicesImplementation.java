@@ -1,6 +1,7 @@
 package org.example.services;
 
 import org.example.models.BankAccount;
+import org.example.models.Client;
 import org.example.models.CurrentAccount;
 import org.example.persistance.BankAccountDAO;
 import org.example.persistance.PersitanceMemoryBankAccount;
@@ -10,7 +11,6 @@ import java.util.List;
 public class BankAccountServicesImplementation implements BankAccountServices{
 
     BankAccountDAO dao = new PersitanceMemoryBankAccount();
-
 
     @Override
     public void createBankAccount(BankAccount bankAccount) {
@@ -33,8 +33,8 @@ public class BankAccountServicesImplementation implements BankAccountServices{
     }
 
     @Override
-    public List<BankAccount> findAll() {
-        return dao.findAll();
+    public List<BankAccount> findAll(List<BankAccount> bankAccount) {
+        return dao.findAll(bankAccount);
     }
 
     @Override

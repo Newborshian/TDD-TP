@@ -21,6 +21,11 @@ public class Client {
         this.phoneNumber = phoneNumber;
     }
 
+    public Client(String name, String firstName) {
+        this.name = name;
+        FirstName = firstName;
+    }
+
     @Override
     public String toString() {
         return "Client{" +

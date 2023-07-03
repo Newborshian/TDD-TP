@@ -7,8 +7,8 @@ import lombok.Setter;
 @Setter
 public class CurrentAccount extends BankAccount{
     private Integer overdraft;
-    public CurrentAccount(Integer pay, String openBankAccounts, Client client) {
-        super(pay, openBankAccounts, client);
+    public CurrentAccount(Integer pay, String openBankAccounts, String name, String firstName) {
+        super(pay, openBankAccounts, name, firstName);
        this.overdraft = 1000;
     }
 

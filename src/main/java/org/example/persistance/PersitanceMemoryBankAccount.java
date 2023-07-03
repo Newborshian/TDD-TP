@@ -1,6 +1,7 @@
 package org.example.persistance;
 
 import org.example.models.BankAccount;
+import org.example.models.Client;
 import org.example.models.CurrentAccount;
 
 import java.util.HashMap;
@@ -14,7 +15,8 @@ public class PersitanceMemoryBankAccount implements BankAccountDAO{
 
     @Override
     public void createBankAccount(BankAccount bankAccount) {
-
+        bankAccount.getFirstName();
+        bankAccount.getName();
         bankAccount.setIdBankAccount(key);
         BANKDB.put(key, bankAccount);
 
@@ -34,7 +36,12 @@ public class PersitanceMemoryBankAccount implements BankAccountDAO{
     }
 
     @Override
-    public List<BankAccount> findAll() {
+    public List<BankAccount> findAll(List<BankAccount> bankAccount) {
+        for (BankAccount bankAccount1 : bankAccount){
+            bankAccount1.setName(bankAccount1.getName());
+            bankAccount1.setFirstName(bankAccount1.getFirstName());
+            bankAccount1.getFirstName();
+        }
         return BANKDB.values().stream().toList();
     }
 

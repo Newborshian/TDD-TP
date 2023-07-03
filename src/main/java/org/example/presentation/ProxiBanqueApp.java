@@ -8,9 +8,13 @@ import org.example.services.BankAccountServicesImplementation;
 import org.example.services.ClientServices;
 import org.example.services.ClientServicesImplementation;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ProxiBanqueApp {
+
+    static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
 
@@ -27,11 +31,11 @@ public class ProxiBanqueApp {
         clientServices.createClient(client2);
 
         //Déclarations d'objets ComptesBancaires relié au client
-       CurrentAccount bankAccount = new CurrentAccount(2500, "04-11-20", client);
+       CurrentAccount bankAccount = new CurrentAccount(2500, "04-11-2020", client.getName(), client.getFirstName());
        bankAccountServices.createBankAccount(bankAccount);
-       CurrentAccount bankAccount1 = new CurrentAccount(5000, "11-20-1870", client1);
+       CurrentAccount bankAccount1 = new CurrentAccount(5000, "11-20-1870", client1.getName(), client.getFirstName());
        bankAccountServices.createBankAccount(bankAccount1);
-       CurrentAccount bankAccount2 = new CurrentAccount(0, "20-11-1987", client2);
+       CurrentAccount bankAccount2 = new CurrentAccount(0, "20-11-1987", client2.getName(), client2.getFirstName());
        bankAccountServices.createBankAccount(bankAccount2);
 
         //Récupère la liste de tout les clients
@@ -49,7 +53,13 @@ public class ProxiBanqueApp {
 
         //Récupère la lsite de tout les comptes bancaires
         System.out.println("\n" + "Liste de tout les comptes bancaires : ");
-        List<BankAccount> bankAccounts = bankAccountServices.findAll();
+
+        List<BankAccount> bankAccounts = new ArrayList<>();
+        bankAccounts.add(0, bankAccount);
+        bankAccounts.add(1, bankAccount1);
+        bankAccounts.add(2, bankAccount2);
+
+        bankAccountServices.findAll(bankAccounts);
         System.out.println("\n" + bankAccounts);
 
         //Récupère la liste de tout les comptes bancaire négatifs
