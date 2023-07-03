@@ -36,28 +36,29 @@ public class ProxiBanqueApp {
 
         //Récupère la liste de tout les clients
         List<Client> clientList = clientServices.findAll();
-        System.out.println("Liste de tout les clients : ");
+        System.out.println("\n" + "Liste de tout les clients : ");
         System.out.println("\n" + clientList);
 
         //Récupère tout les clients par ID;
-        System.out.println("Liste de client trié par ID : ");
+        System.out.println("\n" +"Liste de client trié par ID : ");
         System.out.println("\n" + clientServices.getById(1));
 
         //Fonction Remove puis get de la liste de client
-        System.out.println("Liste de client obtenu après le remove par ID : ");
+        System.out.println("\n" +"Liste de client obtenu après le remove par ID : ");
         System.out.println("\n" + clientServices.deleteClient(1));
 
         //Récupère la lsite de tout les comptes bancaires
-        System.out.println("Liste de tout les comptes bancaires : ");
+        System.out.println("\n" + "Liste de tout les comptes bancaires : ");
         List<BankAccount> bankAccounts = bankAccountServices.findAll();
         System.out.println("\n" + bankAccounts);
 
         //Récupère la liste de tout les comptes bancaire négatifs
-        System.out.println();
+        System.out.println("\n" + "Liste de tout les comptes bancaires négatifs");
         System.out.println( "\n" + bankAccountServices.bankAccountNegativePay(bankAccounts));
 
         //Virement entre compte Bancaire
         bankAccountServices.OperationsBankAccount(bankAccount2, bankAccount, 1000);
+        System.out.println("\n" + "Exemple de virement entre compte courant :");
         System.out.println("\n" + bankAccount2);
         System.out.println(bankAccount);
 
