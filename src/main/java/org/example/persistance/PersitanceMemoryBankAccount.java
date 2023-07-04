@@ -31,22 +31,11 @@ public class PersitanceMemoryBankAccount implements BankAccountDAO{
     }
 
     @Override
-    public List<BankAccount> bankAccountNegativePay(List<BankAccount> bankAccounts) {
-        return BANKDB.values().stream().toList();
-    }
-
-    @Override
     public List<BankAccount> findAll(List<BankAccount> bankAccount) {
         for (BankAccount bankAccount1 : bankAccount){
             bankAccount1.setName(bankAccount1.getName());
             bankAccount1.setFirstName(bankAccount1.getFirstName());
         }
         return BANKDB.values().stream().toList();
-    }
-
-    @Override
-    public void OperationsBankAccount(CurrentAccount currentAccount1, CurrentAccount currentAccount2, Integer addition) {
-        BANKDB.get(currentAccount1).getPay();
-        BANKDB.get(currentAccount2).getPay();
     }
 }
