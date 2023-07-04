@@ -24,8 +24,7 @@ public class BankAccount extends Client {
     @Override
     public String toString() {
         return "BankAccount{" +
-                "idBankAccount=" + idBankAccount +
-                ", pay=" + pay +
+                "pay=" + pay +
                 ", openBankAccount='" + openBankAccount + '\'' +
                 ", name='" + name + '\'' +
                 ", firstName='" + firstName + '\'' +
